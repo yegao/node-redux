@@ -8,17 +8,34 @@ type Reducer = (state:any,action:Action)=>{
 
 interface Store {
   dispatch(action:Action),
-  getState()
+  getState(),
+  interatePath(path:string)
+}
+
+export const splitPath = (path:string):string[]=>{
+  return path.split(/(\\|\/)/)
 }
 
 export const createStore = (reducer:Reducer):Store=>{
   let state:any;
+
   const dispatch = (action:Action)=>{
     state = reducer(state,action)
   }
+
   const getState = ():object=>{
     return state
   }
 
-  return { dispatch, getState };
+  const interatePath = (path:string):any=>{
+    splitPath(path).reduce((prev,next)=>{
+      dispatch({type:next})
+      return state;
+    })
+  }
+
+  return { dispatch, getState ,interatePath };
 }
+
+
+
