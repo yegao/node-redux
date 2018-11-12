@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.splitPath = function (path) {
-    return path.split(/(\\|\/)/);
+    return path.split(/\\|\//);
 };
 exports.createStore = function (reducer) {
     var state;
@@ -12,7 +12,7 @@ exports.createStore = function (reducer) {
         return state;
     };
     var interatePath = function (path) {
-        exports.splitPath(path).reduce(function (prev, next) {
+        return exports.splitPath(path).reduce(function (prev, next) {
             dispatch({ type: next });
             return state;
         });

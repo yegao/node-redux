@@ -1,0 +1,25 @@
+{
+  "name": "node-redux",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yegao/node-redux.git"
+  },
+  "keywords": [
+    "node-redux"
+  ],
+  "author": "ygg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yegao/node-redux/issues"
+  },
+  "homepage": "https://github.com/yegao/node-redux#readme",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}

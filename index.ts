@@ -13,7 +13,7 @@ interface Store {
 }
 
 export const splitPath = (path:string):string[]=>{
-  return path.split(/(\\|\/)/)
+  return path.split(/\\|\//)
 }
 
 export const createStore = (reducer:Reducer):Store=>{
@@ -28,7 +28,7 @@ export const createStore = (reducer:Reducer):Store=>{
   }
 
   const interatePath = (path:string):any=>{
-    splitPath(path).reduce((prev,next)=>{
+    return splitPath(path).reduce((prev,next)=>{
       dispatch({type:next})
       return state;
     })
@@ -36,6 +36,3 @@ export const createStore = (reducer:Reducer):Store=>{
 
   return { dispatch, getState ,interatePath };
 }
-
-
-
